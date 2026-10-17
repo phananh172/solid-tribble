@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selenium (Se) — Khám phá nguyên tố</title>
+<style>
+:root{--bg:#081321;--panel:#111f32;--panel2:#172941;--text:#eef5ff;--muted:#b3c4da;--accent:#56e0c2;--gold:#ffd166;--line:#2b405a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#163657 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:48px 20px 34px;text-align:center;background:linear-gradient(135deg,#102843dd,#081321ee);border-bottom:1px solid var(--line)}
+.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1;margin:14px 0}h1 span{color:var(--accent)}header p{max-width:760px;margin:18px auto;color:var(--muted)}
+.container{width:min(1100px,calc(100% - 32px));margin:28px auto 60px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{background:linear-gradient(145deg,var(--panel),#0d1a2b);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 14px 40px #0002}.span12{grid-column:span 12}.span7{grid-column:span 7}.span5{grid-column:span 5}.span6{grid-column:span 6}
+h2{margin:0 0 14px;font-size:1.45rem}h3{margin:12px 0 6px;color:var(--accent)}p{margin:8px 0}.muted{color:var(--muted)}.tag{display:inline-block;padding:5px 10px;border:1px solid #3b6475;border-radius:999px;color:var(--accent);font-size:.82rem;margin:3px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.stat{background:var(--panel2);padding:13px;border-radius:12px}.stat b{display:block;color:var(--gold);font-size:1.2rem}.stat small{color:var(--muted)}
+.element{display:flex;align-items:center;gap:18px}.tile{width:125px;min-width:125px;aspect-ratio:1;border-radius:18px;background:linear-gradient(145deg,#4ce2c1,#178f99);color:#06232d;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 35px #56e0c244}.tile .num{align-self:flex-start;margin-left:15px;font-weight:700}.tile strong{font-size:3.6rem;line-height:1}.tile small{font-weight:700}
+button{background:var(--accent);color:#06232d;border:0;border-radius:10px;padding:10px 15px;font-weight:800;cursor:pointer;margin:5px 5px 5px 0}button.secondary{background:#263d58;color:var(--text);border:1px solid #45617e}button:hover{filter:brightness(1.08)}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.video-frame{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;background:#050b13;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}.video-frame iframe{width:100%;height:100%;border:0;border-radius:10px}.video-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px}
+.progress{height:8px;background:#26384e;border-radius:10px;overflow:hidden;margin:12px 0}.progress div{height:100%;width:0;background:var(--accent);transition:width .2s}
+.atom-wrap{background:#07101c;border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}.atom-wrap canvas{display:block;width:100%;height:330px}.atom-note{padding:10px 14px;color:var(--muted);font-size:.9rem}
+ul{padding-left:22px}li{margin:6px 0}.experiment{background:#0b1929;border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:12px}
+.question{border-top:1px solid var(--line);padding:16px 0}.question:first-of-type{border-top:0}.options{display:grid;gap:8px;margin-top:10px}.options button{text-align:left;background:#1b2d44;color:var(--text);border:1px solid #354e6b;font-weight:600;margin:0}.options button.correct{border-color:#56e0a0;background:#123d35}.options button.wrong{border-color:#ff7b7b;background:#48252c}.feedback{min-height:24px;color:var(--gold);font-weight:700}.score{font-size:1.2rem;color:var(--accent);font-weight:800}
+footer{text-align:center;color:var(--muted);padding:24px;border-top:1px solid var(--line)}
+@media(max-width:760px){.span7,.span5,.span6{grid-column:span 12}.stats{grid-template-columns:repeat(2,1fr)}.element{align-items:flex-start}.tile{width:100px;min-width:100px}.tile strong{font-size:2.8rem}.card{padding:17px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Hồ sơ nguyên tố · Hóa học tương tác</div>
+  <h1>Selenium <span>(Se)</span></h1>
+  <p>Nguyên tố thiết yếu với lượng rất nhỏ đối với cơ thể sống, đồng thời có vai trò quan trọng trong điện tử, vật liệu và công nghệ năng lượng.</p>
+  <span class="tag">Phi kim</span><span class="tag">Chu kì 4</span><span class="tag">Nhóm 16</span><span class="tag">Nguyên tố số 34</span>
+</header>
+<main class="container">
+<div class="grid">
+<section class="card span12">
+ <div class="element">
+  <div class="tile"><span class="num">34</span><strong>Se</strong><small>78.971</small></div>
+  <div><h2>Thẻ thông tin nhanh</h2><p>Selenium (tiếng Việt thường gọi là <b>selen</b>) được Jöns Jacob Berzelius phát hiện năm 1817. Tên gọi bắt nguồn từ “Selene”, nữ thần Mặt Trăng trong thần thoại Hy Lạp.</p><p class="muted">Số hiệu nguyên tử: 34 · Khối lượng nguyên tử tương đối: khoảng 78,971 · Cấu hình electron: [Ar] 3d¹⁰ 4s² 4p⁴</p></div>
+ </div>
+ <div class="stats"><div class="stat"><b>34</b><small>Proton</small></div><div class="stat"><b>34</b><small>Electron (nguyên tử trung hòa)</small></div><div class="stat"><b>4</b><small>Lớp electron</small></div><div class="stat"><b>6</b><small>Electron lớp ngoài cùng</small></div></div>
+</section>
+
+<section class="card span7">
+ <h2>🎬 Video khám phá 60–90 giây</h2>
+ <p class="muted">Video tham khảo về selenium. Nếu video nhúng không phát được, hãy mở video trên YouTube bằng nút bên dưới.</p>
+ <div class="video-frame" id="videoBox">
+  <iframe src="https://www.youtube-nocookie.com/embed/USV8a7Jf6mY" title="Video giới thiệu Selenium" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ </div>
+ <div class="video-actions"><button onclick="openVideo()">Mở video trên YouTube ↗</button><button class="secondary" onclick="showScript()">Xem lời thuyết minh 75 giây</button></div>
+ <div id="script" hidden class="experiment"><h3>Lời thuyết minh khoảng 75 giây</h3><p>Selenium, kí hiệu Se, có số hiệu nguyên tử 34 và nằm ở chu kì 4, nhóm 16. Nguyên tố này được phát hiện năm 1817 bởi nhà hóa học Jöns Jacob Berzelius. Selenium có nhiều dạng thù hình; selenium đỏ và selenium xám là những dạng thường được nhắc đến. Selenium là vi chất thiết yếu: cơ thể dùng nó để tạo selenoprotein, góp phần vào hoạt động của các enzyme chống oxy hóa và chức năng tuyến giáp. Tuy nhiên, cơ thể chỉ cần lượng rất nhỏ; dùng quá nhiều có thể gây ngộ độc. Trong công nghiệp, selenium được sử dụng trong một số tế bào quang điện, cảm biến ánh sáng, sản xuất thủy tinh và một số vật liệu điện tử. Selenium cũng có vai trò trong nghiên cứu năng lượng mặt trời, chẳng hạn vật liệu đồng-indium-gallium-selenide. Khi học về nguyên tố này, hãy nhớ: một chất có ích ở liều nhỏ vẫn có thể nguy hiểm nếu dùng sai cách. Selenium là ví dụ thú vị về mối liên hệ giữa hóa học, sinh học và công nghệ.</p></div>
+</section>
+
+<section class="card span5">
+ <h2>🩺 Y tế & công nghiệp</h2>
+ <h3>Trong cơ thể và y tế</h3>
+ <ul><li>Là vi chất cần thiết để cơ thể tạo selenoprotein, gồm các enzyme bảo vệ tế bào khỏi tổn thương oxy hóa.</li><li>Hỗ trợ chuyển hóa hormone tuyến giáp và chức năng miễn dịch bình thường.</li><li>Có mặt trong thực phẩm như cá, trứng, thịt và một số loại hạt; nhu cầu và hàm lượng phụ thuộc chế độ ăn.</li></ul>
+ <p><b>Lưu ý:</b> Selenium không phải thuốc chữa bệnh. Bổ sung liều cao có thể gây ngộ độc; chỉ dùng thực phẩm bổ sung theo hướng dẫn chuyên môn.</p>
+ <h3>Trong công nghiệp</h3>
+ <ul><li>Vật liệu quang điện và cảm biến ánh sáng.</li><li>Một số loại kính: giúp khử màu do tạp chất sắt hoặc tạo màu đỏ/hồng theo công thức.</li><li>Vật liệu bán dẫn và pin mặt trời màng mỏng, ví dụ CIGS (đồng–indium–gallium–selenide).</li></ul>
+</section>
+
+<section class="card span6">
+ <h2>🪐 Mô hình nguyên tử 3D</h2>
+ <p class="muted">Kéo chuột hoặc chạm để xoay mô hình; cuộn để phóng to/thu nhỏ. Mô hình Bohr minh họa electron theo lớp, không phải quỹ đạo chính xác của electron.</p>
+ <div class="atom-wrap"><canvas id="atomCanvas" aria-label="Mô hình nguyên tử selenium có 34 electron"></canvas><div class="atom-note">Phân bố electron theo lớp: <b>2 – 8 – 18 – 6</b>. Hạt nhân minh họa gồm 34 proton và khoảng 45 neutron ở đồng vị Se-79 (không phải đồng vị bền phổ biến nhất).</div></div>
+ <div class="video-actions"><button onclick="resetAtom()">Đặt lại góc nhìn</button><button class="secondary" onclick="toggleMotion()" id="motionBtn">Tạm dừng chuyển động</button></div>
+</section>
+
+<section class="card span6">
+ <h2>🧪 Thí nghiệm thực tế an toàn</h2>
+ <p>Không nên tự đốt hoặc xử lý selenium nguyên chất: bụi và hợp chất selenium có thể độc. Thử nghiệm dưới đây mô phỏng một tính chất liên quan, dùng thiết bị điện tử thông thường.</p>
+ <div class="experiment">
+  <h3>Thử cảm biến ánh sáng</h3>
+  <p><b>Dụng cụ:</b> máy tính hoặc điện thoại có màn hình điều chỉnh độ sáng, và một cảm biến ánh sáng thông dụng (nếu có).</p>
+  <ol><li>Đặt cảm biến ở khoảng cách cố định trước màn hình.</li><li>Thay đổi độ sáng màn hình từ thấp lên cao.</li><li>Ghi lại số đo của cảm biến ở mỗi mức sáng, giữ nguyên khoảng cách.</li><li>Vẽ đồ thị độ sáng màn hình và số đo cảm biến để quan sát xu hướng.</li></ol>
+  <p><b>Giải thích:</b> một số vật liệu bán dẫn, trong đó có selenium, có tính quang dẫn. Thí nghiệm với cảm biến hiện đại chỉ minh họa nguyên lý phát hiện ánh sáng, không chứng minh cảm biến đó chứa selenium.</p>
+ </div>
+ <div class="experiment">
+  <h3>Quan sát dữ liệu</h3>
+  <label for="light">Mức sáng mô phỏng: <span id="lightValue">50</span>%</label>
+  <input id="light" type="range" min="0" max="100" value="50" style="width:100%" oninput="document.getElementById('lightValue').textContent=this.value;document.getElementById('lightBar').style.width=this.value+'%'">
+  <div class="progress"><div id="lightBar" style="width:50%"></div></div>
+  <p class="muted">Thanh này chỉ mô phỏng mức sáng, không phải phép đo vật lý.</p>
+ </div>
+</section>
+
+<section class="card span12">
+ <h2>🧠 Câu hỏi tương tác thông minh</h2>
+ <p class="muted">Chọn đáp án cho từng câu. Hệ thống phản hồi ngay và tính điểm khi bạn hoàn thành.</p>
+ <div id="quiz"></div>
+ <div class="video-actions"><button onclick="finishQuiz()">Chấm điểm</button><button class="secondary" onclick="restartQuiz()">Làm lại</button><span class="score" id="score"></span></div>
+ <p id="finalFeedback" class="feedback" aria-live="polite"></p>
+</section>
+<section class="card span12">
+ <h2>📌 Ghi nhớ</h2>
+ <ul><li>Selenium là nguyên tố số 34, kí hiệu Se, thuộc nhóm 16 và chu kì 4.</li><li>Phân bố electron theo lớp là 2–8–18–6.</li><li>Có vai trò sinh học ở lượng vi mô, đồng thời hữu ích trong một số vật liệu quang điện và thủy tinh.</li><li>Liều lượng rất quan trọng: thiếu hụt và dư thừa đều có thể gây vấn đề sức khỏe.</li></ul>
+ <p class="muted">Tài liệu tham khảo để đọc thêm: Royal Society of Chemistry — Selenium; NIH Office of Dietary Supplements — Selenium Fact Sheet. Nội dung trang phục vụ học tập, không thay thế tư vấn y tế.</p>
+</section>
+</div>
+</main>
+<footer>Trang học tập tương tác · Selenium (Se) · Hãy học hóa học an toàn!</footer>
+<script>
+function openVideo(){window.open('https://www.youtube.com/results?search_query=selenium+chemical+element+explained+short+video','_blank','noopener')}
+function showScript(){const el=document.getElementById('script');el.hidden=!el.hidden}
+const questions=[
+ {q:'Selenium có số hiệu nguyên tử là bao nhiêu?',a:['16','34',' Se là 79','52'],correct:1,why:'Selenium có 34 proton trong hạt nhân, nên số hiệu nguyên tử là 34.'},
+ {q:'Selenium nằm ở chu kì nào của bảng tuần hoàn?',a:['Chu kì 2','Chu kì 3','Chu kì 4','Chu kì 5'],correct:2,why:'Selenium nằm ở chu kì 4, nhóm 16.'},
+ {q:'Phân bố electron theo lớp của nguyên tử selenium trung hòa là gì?',a:['2–8–18–6','2–8–8–16','2–6–18–8','2–8–18–4'],correct:0,why:'Tổng 2 + 8 + 18 + 6 = 34 electron.'},
+ {q:'Vì sao cần thận trọng khi bổ sung selenium?',a:['Selenium luôn độc ở mọi lượng','Cơ thể không cần selenium','Dùng quá nhiều có thể gây ngộ độc','Selenium chỉ có trong thuốc'],correct:2,why:'Selenium là vi chất thiết yếu nhưng lượng dư thừa có thể gây độc.'},
+ {q:'Ứng dụng công nghiệp nào có liên quan đến selenium?',a:['Làm nhiên liệu cho mọi động cơ','Vật liệu quang điện và một số loại kính','Thay thế hoàn toàn đồng trong dây điện','Làm chất khử trùng an toàn để uống'],correct:1,why:'Selenium được dùng trong một số vật liệu quang điện, cảm biến và công thức sản xuất kính.'}
+];
+let answers={},submitted=false;
+function renderQuiz(){
+ const root=document.getElementById('quiz');root.innerHTML='';
+ questions.forEach((q,i)=>{
+  const wrap=document.createElement('div');wrap.className='question';
+  const title=document.createElement('b');title.textContent=(i+1)+'. '+q.q;wrap.appendChild(title);
+  const opts=document.createElement('div');opts.className='options';
+  q.a.forEach((a,j)=>{const b=document.createElement('button');b.textContent=String.fromCharCode(65+j)+'. '+a;b.onclick=()=>choose(i,j,opts);if(answers[i]===j)b.style.outline='2px solid #56e0c2';if(submitted&&j===q.correct)b.classList.add('correct');if(submitted&&answers[i]===j&&j!==q.correct)b.classList.add('wrong');opts.appendChild(b)});
+  wrap.appendChild(opts);const fb=document.createElement('div');fb.className='feedback';fb.id='fb'+i;if(submitted)fb.textContent=(answers[i]===q.correct?'Chính xác! ':'Chưa đúng. ')+q.why;wrap.appendChild(fb);root.appendChild(wrap);
+ });
+}
+function choose(i,j){if(submitted)return;answers[i]=j;renderQuiz();document.getElementById('finalFeedback').textContent=''}
+function finishQuiz(){submitted=true;renderQuiz();let score=0;questions.forEach((q,i)=>{if(answers[i]===q.correct)score++});document.getElementById('score').textContent='Điểm: '+score+'/'+questions.length;document.getElementById('finalFeedback').textContent=score===questions.length?'Xuất sắc! Bạn đã nắm vững các kiến thức chính.':score>=3?'Tốt lắm! Hãy xem lại phần giải thích của những câu sai.':'Hãy đọc lại phần ghi nhớ rồi thử lần nữa.'}
+function restartQuiz(){answers={};submitted=false;document.getElementById('score').textContent='';document.getElementById('finalFeedback').textContent='';renderQuiz()}
+renderQuiz();
+// Mô hình 3D nhẹ bằng Canvas: hạt nhân ở giữa, các lớp electron quay theo góc nhìn chuột.
+const canvas=document.getElementById('atomCanvas'),ctx=canvas.getContext('2d');let angleX=.25,angleY=.35,drag=false,lastX=0,lastY=0,motion=true,raf;
+function resizeCanvas(){const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=r.width*dpr;canvas.height=r.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+function drawAtom(){
+ const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);ctx.fillStyle='#07101c';ctx.fillRect(0,0,w,h);
+ const cx=w/2,cy=h/2,scale=Math.min(w,h)/2.7;
+ // sao nền
+ for(let i=0;i<35;i++){let x=(i*71%Math.max(w,1)),y=(i*43%Math.max(h,1));ctx.fillStyle='#8ba8c5';ctx.globalAlpha=.15+(i%4)*.12;ctx.fillRect(x,y,1.5,1.5)}ctx.globalAlpha=1;
+ const shells=[2,8,18,6],radii=[.34,.52,.72,.92];
+ // phối cảnh đơn giản
+ shells.forEach((count,s)=>{
+  const r=scale*radii[s],tilt=.35+s*.16;
+  ctx.beginPath();ctx.ellipse(cx,cy,r,r*Math.cos(tilt+angleX)*.78,angleY+s*.38,0,Math.PI*2);ctx.strokeStyle=['#3d8ebc','#6d79dc','#b16cdb','#56e0c2'][s];ctx.globalAlpha=.58;ctx.lineWidth=1.2;ctx.stroke();ctx.globalAlpha=1;
+  for(let e=0;e<count;e++){
+   const a=(Math.PI*2*e/count)+(motion?performance.now()*.00035*(s%2?1:-1):0)+angleY*(s+1);
+   const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r*Math.cos(tilt+angleX)*.78;
+   ctx.beginPath();ctx.arc(x,y,3.2+(s===3?.4:0),0,Math.PI*2);ctx.fillStyle=['#8bd8ff','#a9a5ff','#e0a8ff','#56e0c2'][s];ctx.fill();
+  }
+ });
+ // hạt nhân
+ for(let i=0;i<65;i++){const a=i*2.399,rr=2+Math.sqrt(i)*3.1;const x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr*.78;ctx.beginPath();ctx.arc(x,y,3.1,0,Math.PI*2);ctx.fillStyle=i%2?'#ff8c7a':'#ffd166';ctx.fill()}
+ ctx.fillStyle='#eef5ff';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText('HẠT NHÂN',cx,cy+scale*1.12);
+ if(motion)raf=requestAnimationFrame(drawAtom);
+}
+function resetAtom(){angleX=.25;angleY=.35;if(!motion)drawAtom()}
+function toggleMotion(){motion=!motion;document.getElementById('motionBtn').textContent=motion?'Tạm dừng chuyển động':'Tiếp tục chuyển động';if(motion)drawAtom();else cancelAnimationFrame(raf);if(!motion)drawAtom()}
+canvas.addEventListener('pointerdown',e=>{drag=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;angleY+=(e.clientX-lastX)*.01;angleX+=(e.clientY-lastY)*.01;lastX=e.clientX;lastY=e.clientY;if(!motion)drawAtom()});
+canvas.addEventListener('pointerup',()=>drag=false);canvas.addEventListener('pointercancel',()=>drag=false);
+canvas.addEventListener('wheel',e=>{e.preventDefault();}, {passive:false});
+window.addEventListener('resize',()=>{resizeCanvas();if(!motion)drawAtom()});resizeCanvas();drawAtom();
+</script>
+</body>
+</html>
